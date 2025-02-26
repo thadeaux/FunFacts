@@ -36,10 +36,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "FactView", sender: nil)
+            }
+        
+    }*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    
 
 
 }

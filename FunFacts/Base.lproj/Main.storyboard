@@ -63,10 +63,55 @@
                             <constraint firstItem="Cic-Mg-ch3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="urf-u2-0dQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="L4l-xI-X13" kind="presentation" identifier="toFactView" id="tCa-MH-Azs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-163" y="4"/>
+        </scene>
+        <!--Fact View-->
+        <scene sceneID="vxe-Im-4rV">
+            <objects>
+                <viewController id="L4l-xI-X13" customClass="FactView" customModule="FunFacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RaW-e6-bYP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="pwT-Vs-LYd">
+                                <rect key="frame" x="50" y="50" width="293" height="742"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoY-BV-ron">
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="341"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3P8-Ef-eH6">
+                                        <rect key="frame" x="0.0" y="401" width="293" height="341"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Back to List">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="23"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6mo-ZL-i3O"/>
+                        <color key="backgroundColor" red="0.41570522069999999" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pwT-Vs-LYd" firstAttribute="top" secondItem="6mo-ZL-i3O" secondAttribute="top" constant="50" id="Epl-JB-eyi"/>
+                            <constraint firstItem="6mo-ZL-i3O" firstAttribute="trailing" secondItem="pwT-Vs-LYd" secondAttribute="trailing" constant="50" id="Nbn-ON-JyB"/>
+                            <constraint firstItem="6mo-ZL-i3O" firstAttribute="bottom" secondItem="pwT-Vs-LYd" secondAttribute="bottom" constant="50" id="ORd-FX-Mjj"/>
+                            <constraint firstItem="pwT-Vs-LYd" firstAttribute="leading" secondItem="6mo-ZL-i3O" secondAttribute="leading" constant="50" id="XxB-PF-MN1"/>
+                            <constraint firstItem="pwT-Vs-LYd" firstAttribute="centerX" secondItem="RaW-e6-bYP" secondAttribute="centerX" id="kex-2Z-FK7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7L-e8-YhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="4"/>
         </scene>
     </scenes>
 </document>
