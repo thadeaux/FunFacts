@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         Trivia("Tempest", "Tempest was one of the first arcade games to feature 3D graphics.")
     ]
     
+    var fact = ""
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return facts.count
     }
@@ -32,15 +34,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
         var content = cell.defaultContentConfiguration()
         content.text = facts[indexPath.row].game
+        //fact = facts[indexPath.row].fact
         cell.contentConfiguration = content
+        //print(fact)
         return cell
+        
     }
     
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "FactView", sender: nil)
-            }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        fact = facts[indexPath.row].fact
+        self.performSegue(withIdentifier: "toFactView", sender: self)
         
-    }*/
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +55,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "toFactView" {
+            let navigation = segue.destination as! FactView
+            navigation.fact = fact
+        }
+        
     }
     
 
